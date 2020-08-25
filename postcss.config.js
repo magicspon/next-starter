@@ -1,5 +1,7 @@
-// const isStorybook = process.env.STORYBOOK_ENV === "storybook"
-
 module.exports = {
-	plugins: [require("tailwindcss"), require("postcss-preset-env")],
+	plugins: {
+		tailwindcss: {},
+		"postcss-preset-env": { stage: 2 },
+		cssnano: process.env.NODE_ENV === "production" ? {} : false,
+	},
 }
